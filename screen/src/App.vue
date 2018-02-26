@@ -1,28 +1,64 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Room id="room"></Room>
+    <UserList id="user-list"></UserList>
+    <Cards id="cards"></Cards>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+  import Cards from './components/Cards';
+  import Room from './components/Room';
+  import UserList from './components/UserList';
 
-export default {
-  name: 'app',
-  components: {
-    HelloWorld
+  export default {
+    name: 'app',
+    components: {
+      Cards,
+      Room,
+      UserList
+    },
+    data() {
+      return {
+        users: [],
+        cards: [],
+        room: {
+          name: 'example'
+        }
+      }
+    }
   }
-}
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+  html {
+    box-sizing: border-box;
+  }
+
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  #room {
+    background: red;
+    color: white;
+  }
+
+  #user-list {
+    background: blue;
+    color: white;
+  }
+
+  #cards {
+    background: green;
+    color: white;
+  }
+
+  #app {
+
+  }
 </style>
