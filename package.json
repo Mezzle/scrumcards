@@ -1,0 +1,16 @@
+{
+  "devDependencies": {
+    "husky": "^0.14.3",
+    "lint-staged": "^7.2.0",
+    "prettier-eslint-cli": "^4.7.1"
+  },
+  "lint-staged": {
+    "*.{css,js,json,jsx,md}": [
+      "prettier-eslint --write",
+      "git add"
+    ]
+  },
+  "scripts": {
+    "precommit": "lint-staged"
+  }
+}
